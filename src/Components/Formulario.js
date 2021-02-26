@@ -1,8 +1,12 @@
 import React,{useContext, useState} from 'react';
 import {CategoriasContext} from '../context/CategoriasContext';
+import {RecetasContext} from '../context/RecetasContext';
 const Formulario = () => {
 
     const { categorias }=useContext(CategoriasContext);
+    const {buscarRecetas}=useContext(RecetasContext);
+
+
     const [busqueda , guardarBusqueda]=useState({
         ingrediente:'',
         categoria:''
@@ -18,7 +22,8 @@ const Formulario = () => {
     //gaurdar los datos del formulario
     const handleSubmit=e=>{
         e.preventDefault();
-        
+        buscarRecetas(busqueda);
+
     }
 
     return ( 
