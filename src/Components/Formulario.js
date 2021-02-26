@@ -23,6 +23,7 @@ const Formulario = () => {
     const handleSubmit=e=>{
         e.preventDefault();
         buscarRecetas(busqueda);
+        
        
 
     }
