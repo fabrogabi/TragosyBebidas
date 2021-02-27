@@ -15,17 +15,20 @@ const RecetasProvider = (props) => {
 
     useEffect(()=>{
        const obtenerReceta= async() =>{
-        
-        const urlrecetas=`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${busqueda.nombre}&c=${busqueda.categoria}`
+        if (consultar){
+            const urlrecetas=`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${busqueda.nombre}&c=${busqueda.categoria}`
         const resultado= await axios.get(urlrecetas);
-        console.log(resultado.data.drinks);
-       }
+       guardarRecetas(resultado.data.drinks);
+       // console.log(resultado.data.drinks);
+        }
+        
        obtenerReceta();
+       }
     },[busqueda])
 
     return ( 
         <RecetasContext.Provider
-        value={{buscarRecetas}}
+        value={{buscarRecetas,guardarConsultar}}
         >
             {props.children}
         </RecetasContext.Provider>
