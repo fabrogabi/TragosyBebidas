@@ -7,7 +7,7 @@ import {RecetasContext} from '../context/RecetasContext';
 const ListaRecetas = () => {
     
     const {recetas}=useContext(RecetasContext)  ;
-    console.log(recetas)
+    
 
     return (
 

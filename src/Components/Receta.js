@@ -5,7 +5,7 @@ import {ModalContext} from '../context/ModalContext'
 const Receta = ({receta}) => {
     //extraer valores del context
     const {guardarIdReceta}=useContext(ModalContext);
-
+    
     return ( 
         <div className="col md-4 mb-3">
             <div className="card">
