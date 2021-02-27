@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react';
 import Header from './Components/Header'
 import Formulario from './Components/Formulario'
+import ListaRecetas from './Components/ListaRecetas'
 import CategoriasProvider from './context/CategoriasContext';
 import RecetasProvider from './context/RecetasContext';
 
@@ -16,6 +17,7 @@ function App() {
             <Formulario/>
 
           </div>
+          <ListaRecetas/>
         </div>
 
       
