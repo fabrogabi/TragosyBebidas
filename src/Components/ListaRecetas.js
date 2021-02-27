@@ -1,4 +1,5 @@
 import React,{useContext} from 'react';
+import Receta from './Receta'
 import {RecetasContext} from '../context/RecetasContext';
 
 
@@ -6,15 +7,22 @@ import {RecetasContext} from '../context/RecetasContext';
 const ListaRecetas = () => {
     
     const {recetas}=useContext(RecetasContext)  ;
-
-    console.log("recetas1")
-
-    
     console.log(recetas)
-    console.log("recetas2")
-    return ( 
-        <h1>listarecetas</h1>
-     );
+
+    return (
+
+        <div className="row mt-5">
+            {recetas.map(receta=>(
+                
+                <Receta
+                key={receta.idDrink}
+                receta={receta}
+                /> 
+            ))}
+        </div>
+
+    )
+
 }
  
 export default ListaRecetas;
