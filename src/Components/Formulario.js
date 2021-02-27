@@ -4,7 +4,7 @@ import {RecetasContext} from '../context/RecetasContext';
 const Formulario = () => {
 
     const { categorias }=useContext(CategoriasContext);
-    const {buscarRecetas,recetas}=useContext(RecetasContext);
+    const {buscarRecetas,recetas,consultar,guardarConsultar}=useContext(RecetasContext);
 
 
     const [busqueda , guardarBusqueda]=useState({
@@ -18,12 +18,14 @@ const Formulario = () => {
         })
         
     }
-
+    console.log(consultar);
+    
     //gaurdar los datos del formulario
     const handleSubmit=e=>{
         e.preventDefault();
         buscarRecetas(busqueda);
-        
+        guardarConsultar(true);
+            
         }
 
     return ( 
